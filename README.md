@@ -59,35 +59,36 @@ Socket programming finds applications in various domains, including web developm
 
 ## PROGRAM
 # CLIENT:
-import socket
-s=socket.socket()
-s.bind(('localhost',8000))
-s.listen(5)
-c,addr=s.accept()
-while True:
-i=input("Enter a data: ")
-c.send(i.encode())
-ack=c.recv(1024).decode()
-if ack:
-print(ack)
-continue
-else:
-c.close()
-break
+import socket   
+s=socket.socket()  
+s.bind(('localhost',8000))   
+s.listen(5)    
+c,addr=s.accept()   
+while True:    
+i=input("Enter a data: ")   
+c.send(i.encode())   
+ack=c.recv(1024).decode()   
+if ack:   
+print(ack)   
+continue   
+else:  
+c.close()   
+break   
 
 # SERVER
-import socket
-s=socket.socket()
-s.connect(('localhost',8000))
-while True:
- print(s.recv(1024).decode())
- s.send("Acknowledgement Recived".encode())
+import socket  
+s=socket.socket()   
+s.connect(('localhost',8000))  
+while True:   
+ print(s.recv(1024).decode())  
+ s.send("Acknowledgement Recived".encode())  
 
 ## OUTPUT
 # CLIENT:
-![Screenshot 2024-04-08 155453](https://github.com/sanjayashwinP/SocketStudy/assets/147473265/baa34e1e-a5eb-4304-ac89-bcb8218c187a)
+![Screenshot 2024-04-09 152227](https://github.com/sanjayashwinP/SocketStudy/assets/147473265/4e0cf9cf-56b3-438c-9cf0-22e36435d524)
+
 # SERVER:
-![Screenshot 2024-04-08 155513](https://github.com/sanjayashwinP/SocketStudy/assets/147473265/ab106667-e101-4d33-a264-037115edfe3c)
+![Screenshot 2024-04-09 152237](https://github.com/sanjayashwinP/SocketStudy/assets/147473265/ac835f24-cb5a-492a-acb8-107b1a5c4355)
 
 ## Result:
 Thus the study of Socket Programming Completed Successfully
